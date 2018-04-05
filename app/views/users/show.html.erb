@@ -1,1 +1,5 @@
-<h1>Mr <%= @user.email %></h1>
+<h1>Dr <%= @user.firstname+' '+@user.lastname %></h1>
+
+<% @user_patients.each do |p| %>
+    <%= link_to p.firstname+' '+p.lastname, patient_path(p) %>
+<%end%>

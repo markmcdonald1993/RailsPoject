@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Patients</h1>
+<%= form_tag(patients_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Patients By Lastname" %>
+  <%= submit_tag "Search" %>
+<% end %>
 
 <table>
   <thead>
