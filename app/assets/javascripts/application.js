@@ -14,5 +14,7 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require rails-ujs
+//= require Chart.bundle
+//= require chartkick
 //= require turbolinks
 //= require_tree .
