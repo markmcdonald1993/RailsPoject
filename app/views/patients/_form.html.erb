@@ -37,6 +37,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :email %><br />
+    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
     <%= form.label :infection %>
     <%= form.text_field :infection, id: :patient_infection %>
   </div>
