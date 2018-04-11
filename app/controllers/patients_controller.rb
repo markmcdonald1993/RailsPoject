@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    PatientMailer.example(Patient.new(lastname: 'bo@samurails.com')).deliver
+   #PatientMailer.example(Patient.new(lastname: 'bo@samurails.com')).deliver
     @patients = Patient.all
     if params[:search]
       @patients = Patient.search(params[:search]).order("created_at DESC")
@@ -66,6 +66,14 @@ class PatientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def mail
+      @patient = Patient.new(patient_params)
+      if @params.save
+        UserMailer.example(@patient).deliver_now
+  
+      end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -75,6 +83,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:firstname, :lastname, :address, :dob, :phoneno, :infection, :injury)
+      params.require(:patient).permit(:firstname, :lastname, :address, :dob, :phoneno, :email, :infection, :injury)
     end
 end
