@@ -8,6 +8,8 @@ end
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-rails'
 
+gem 'chartkick'
+
 gem "letter_opener", :group => :development
 
 source 'https://rails-assets.org' do

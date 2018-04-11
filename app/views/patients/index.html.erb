@@ -44,3 +44,6 @@
 <br>
 
 <%= link_to 'New Patient', new_patient_path %>
+
+
+<%= pie_chart Patient.group(:injury).count%>
