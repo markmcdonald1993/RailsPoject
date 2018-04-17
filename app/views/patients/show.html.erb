@@ -40,5 +40,10 @@
   <%= @patient.injury %>
 </p>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<p>
+  <strong>Priority:</strong>
+  <%= @patient.priority %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient),{ :class => "btn"} %> 
+<%= link_to 'Back', user_path(current_user),{ :class => "btn"} %>

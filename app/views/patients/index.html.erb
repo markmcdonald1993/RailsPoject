@@ -1,49 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Patients</h1>
-<%= form_tag(patients_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Patients By Lastname" %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<table class = "table">
-  <thead>
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Address</th>
-      <th>Dob</th>
-      <th>Phoneno</th>
-      <th>Email</th>
-      <th>Infection</th>
-      <th>Injury</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patients.each do |patient| %>
-      <tr>
-        <td><%= patient.firstname %></td>
-        <td><%= patient.lastname %></td>
-        <td><%= patient.address %></td>
-        <td><%= patient.dob %></td>
-        <td><%= patient.phoneno %></td>
-        <td><%= patient.email %></td>
-        <td><%= patient.infection %></td>
-        <td><%= patient.injury %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Mail', patient %></td>
-      </tr>
+  <div class = "container">
+    <h1>Patients</h1>
+    <%= form_tag(patients_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search By Lastname" %>
+      <%= submit_tag "Search", class: "btn" %>
     <% end %>
-  </tbody>
-</table>
-
+</div>
+  <div class="table-responsive-sm">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Date of Birth</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Infection</th>
+          <th>Injury</th>
+          <th>Priority</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr>
+            <td><%= patient.firstname %></td>
+            <td><%= patient.lastname %></td>
+            <td><%= patient.address %></td>
+            <td><%= patient.dob %></td>
+            <td><%= patient.phoneno %></td>
+            <td><%= patient.email %></td>
+            <td><%= patient.infection %></td>
+            <td><%= patient.injury %></td>
+             <td><%= patient.priority %></td>
+            <td><%= link_to 'Show', patient ,{ :class => "btn"} %></td>
+            <td><%= link_to 'Edit', edit_patient_path(patient),{ :class => "btn"} %></td>
+            <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+            <td><%= link_to 'Mail', patient,{ :class => "btn"} %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <br>
 
-<%= link_to 'New Patient', new_patient_path %>
 
 
-<%= pie_chart Patient.group(:injury).count%>
+
+<%= pie_chart Patient.group(:priority).count%>
