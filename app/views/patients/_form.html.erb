@@ -10,48 +10,63 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :firstname %>
-    <%= form.text_field :firstname, id: :patient_firstname %>
+  
+  <div class = "container">
+    <div class="row">
+      <div class="col-md-6 center border">
+        <form>
+            <div class="form-group">
+              <%= form.label :firstname, "First Name" %>
+              <%= form.text_field :firstname, id: :patient_firstname, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :lastname, "Last Name" %>
+              <%= form.text_field :lastname, id: :patient_lastname, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :address %>
+              <%= form.text_field :address, id: :patient_address, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :dob ,"Date of Birth" %>
+              <%= form.text_field :dob, id: :patient_dob, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :phoneno, "Phone Number" %>
+              <%= form.number_field :phoneno, id: :patient_phoneno, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :email %><br />
+              <%= form.email_field :email, id: :patient_email, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :infection %>
+              <%= form.text_field :infection, id: :patient_infection, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :injury %>
+              <%= form.text_field :injury, id: :patient_injury, class: "form-control" %>
+            </div>
+          
+            <div class="form-group">
+              <%= form.label :priority %>
+              <%= form.select :priority, ["Low", "Medium", "High"], class: "form-control" %>
+            </div>
+            
+            <div class="actions">
+              <%= form.submit nil, class: "btn" %>
+            </div>
+          <% end %>
+          
+          <%= link_to 'Back', patients_path ,{class: "btn"}%>
+        </form>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :lastname %>
-    <%= form.text_field :lastname, id: :patient_lastname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :patient_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dob %>
-    <%= form.text_field :dob, id: :patient_dob %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phoneno %>
-    <%= form.number_field :phoneno, id: :patient_phoneno %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %><br />
-    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :infection %>
-    <%= form.text_field :infection, id: :patient_infection %>
-  </div>
-
-  <div class="field">
-    <%= form.label :injury %>
-    <%= form.text_field :injury, id: :patient_injury %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

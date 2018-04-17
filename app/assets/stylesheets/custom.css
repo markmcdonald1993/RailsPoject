@@ -1,0 +1,50 @@
+.link  { 
+    color: white;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.patient_list{
+    color: black;
+    text-decoration: none;
+}
+
+.patient_list:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.btn {
+   border: 0;
+   background-color: black;
+   color: white;
+   text-align: center;
+   display: inline-block;
+   font-size: 16px;
+   margin-bottom: 5px;
+    
+}
+
+.btn:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.center{
+    float: none;
+    margin: 0 auto;
+}
+.right{
+    float: right;
+}
+
+.border {
+    border-style: solid;
+    border-width: 6px;
+    border-color: black;
+}
