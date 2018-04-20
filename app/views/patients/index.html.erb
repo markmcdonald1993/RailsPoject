@@ -35,10 +35,10 @@
             <td><%= patient.email %></td>
             <td><%= patient.infection %></td>
             <td><%= patient.injury %></td>
-             <td><%= patient.priority %></td>
+            <td><%= patient.priority %></td>
             <td><%= link_to 'Show', patient ,{ :class => "btn"} %></td>
             <td><%= link_to 'Edit', edit_patient_path(patient),{ :class => "btn"} %></td>
-            <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+            <td><%= link_to 'Destroy', patient, class: 'btn', method: :delete, data: { confirm: 'Are you sure?'} %></td>
             <td><%= link_to 'Mail', patient,{ :class => "btn"} %></td>
           </tr>
         <% end %>
