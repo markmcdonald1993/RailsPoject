@@ -45,5 +45,10 @@
   <%= @patient.priority %>
 </p>
 
+<%= form_tag ("/validate") do %>
+<%= text_field_tag :suggest %>
+<%= submit_tag "Suggestion" %>
+<% end %>
+
 <%= link_to 'Edit', edit_patient_path(@patient),{ :class => "btn"} %> 
 <%= link_to 'Back', user_path(current_user),{ :class => "btn"} %>

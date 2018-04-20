@@ -10,6 +10,8 @@ gem 'jquery-rails'
 
 gem 'chartkick'
 
+gem 'suggest_action'
+
 gem "letter_opener", :group => :development
 
 source 'https://rails-assets.org' do

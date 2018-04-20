@@ -75,6 +75,15 @@ class PatientsController < ApplicationController
       end
   end
 
+   def suggest
+     @input1 = params[:suggest]
+     @result = Check.runcheck(@input1)
+     flash[:notice] = @result
+     redirect_to request.referrer
+     
+   end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
