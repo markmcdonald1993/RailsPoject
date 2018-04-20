@@ -1,54 +1,72 @@
-<p id="notice"><%= notice %></p>
+        <br />
+        <br />
+        <br />   
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @patient.firstname %>
-</p>
+<div class ="container border">
+  <div class = "row">
+    <div class="col-sm-6 border">
+      <p>
+        <strong>Firstname:</strong>
+        <%= @patient.firstname %>
+      </p>
+      
+      <p>
+        <strong>Lastname:</strong>
+        <%= @patient.lastname %>
+      </p>
+      
+      <p>
+        <strong>Address:</strong>
+        <%= @patient.address %>
+      </p>
+      
+      <p>
+        <strong>Dob:</strong>
+        <%= @patient.dob %>
+      </p>
+      
+      <p>
+        <strong>Phoneno:</strong>
+        <%= @patient.phoneno %>
+      </p>
+      
+      <p>
+        <strong>Email:</strong>
+        <%= @patient.email %>
+      </p>
+      
+      <p>
+        <strong>Infection:</strong>
+        <%= @patient.infection %>
+      </p>
+      
+      <p>
+        <strong>Injury:</strong>
+        <%= @patient.injury %>
+      </p>
+      
+      <p>
+        <strong>Priority:</strong>
+        <%= @patient.priority %>
+      </p>
+    </div>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @patient.lastname %>
-</p>
+      <div class="col-sm-6 border">
+        <br />
+        <h4>Enter in patient injury or infection below to get some advice</h4>   
+        <%= form_tag ("/validate") do %>
+        <%= text_field_tag :suggest %>
+        <%= submit_tag "Suggestion" %>
+        <% end %>
+        <br />
+        <br />        
+        <h5 id="notice"><%= notice %></h5>
+        <br />
+        <br />
+        <%= link_to 'Edit', edit_patient_path(@patient),{ :class => "btn"} %> 
+        <%= link_to 'Back', user_path(current_user),{ :class => "btn"} %>
+      </div>
+    </div>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @patient.address %>
-</p>
 
-<p>
-  <strong>Dob:</strong>
-  <%= @patient.dob %>
-</p>
-
-<p>
-  <strong>Phoneno:</strong>
-  <%= @patient.phoneno %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @patient.email %>
-</p>
-
-<p>
-  <strong>Infection:</strong>
-  <%= @patient.infection %>
-</p>
-
-<p>
-  <strong>Injury:</strong>
-  <%= @patient.injury %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @patient.priority %>
-</p>
-
-<%= form_tag ("/validate") do %>
-<%= text_field_tag :suggest %>
-<%= submit_tag "Suggestion" %>
-<% end %>
-
-<%= link_to 'Edit', edit_patient_path(@patient),{ :class => "btn"} %> 
-<%= link_to 'Back', user_path(current_user),{ :class => "btn"} %>

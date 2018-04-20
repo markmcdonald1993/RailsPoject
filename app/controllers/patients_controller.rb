@@ -4,7 +4,6 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-   #PatientMailer.example(Patient.new(lastname: 'bo@samurails.com')).deliver
     @patients = Patient.all
     if params[:search]
       @patients = Patient.search(params[:search]).order("created_at DESC")
@@ -70,7 +69,7 @@ class PatientsController < ApplicationController
   def mail
       @patient = Patient.new(patient_params)
       if @params.save
-        UserMailer.example(@patient).deliver_now
+        PatientMailer.example(Patient.new(email: :email)).deliver
   
       end
   end
